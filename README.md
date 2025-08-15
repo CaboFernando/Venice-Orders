@@ -24,7 +24,7 @@ O projeto segue **Clean Architecture + DDD + CQRS**:
 ### **1. Configurar variáveis de ambiente**
 
 ```powershell
-set SERVICEBUS_CONNECTION=Endpoint=sb://<NAMESPACE>.servicebus.windows.net/;SharedAccessKeyName=<Rule>;SharedAccessKey=<Key>
+set SERVICEBUS_CONNECTION=Endpoint=sb://sb-veniceorders.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=G+24Ub4m3eHAvoabMvtTp1GbVxHrjul/E+ASbMECbLs=
 set JWT_KEY=Fm8G+Xq2Y5k3Lw4oPz9nJ7y6aEa5Hw0oZ0I4bC3T+uR=
 ```
 
@@ -85,7 +85,7 @@ GET /api/v1/pedidos/{pedidoId}
 
 4. **Obter Connection String**
 
-   * No arquivo txt terá a conexão do service bus que já está criada e pronta pra uso
+   * No item 1 tem as informações de conexão do service bus que já está criada e pronta pra uso
 
 ---
 
