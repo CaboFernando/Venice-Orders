@@ -1,44 +1,113 @@
-var builder = WebApplication.CreateBuilder(args);
+using System.Text;
+using Azure.Messaging.ServiceBus;
+using FluentValidation;
+using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using MongoDB.Driver;
+using VeniceOrders.Application.Commands.CreatePedido;
+using VeniceOrders.Application.Validation;
+using VeniceOrders.Domain.Repositories;
+using VeniceOrders.Domain.Services;
+using VeniceOrders.Infrastructure.Cache;
+using VeniceOrders.Infrastructure.Data.Context;
+using VeniceOrders.Infrastructure.Data.Repositories;
+using VeniceOrders.Infrastructure.Messaging;
+using VeniceOrders.Infrastructure.Mongo;
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+var builder = WebApplication.CreateBuilder(args);
+var cfg = builder.Configuration;
+var services = builder.Services;
+
+// Controllers + Swagger
+services.AddControllers();
+services.AddEndpointsApiExplorer();
+services.AddSwaggerGen(o =>
+{
+    o.SwaggerDoc("v1", new() { Title = "Venice Orders API", Version = "v1" });
+    o.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT",
+        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+        Description = "Insira o token no formato: Bearer {seu_token}"
+    });
+    o.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+    {
+        {
+            new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+            {
+                Reference = new Microsoft.OpenApi.Models.OpenApiReference
+                {
+                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
+
+// Auth JWT
+services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(o =>
+    {
+        o.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = cfg["Jwt:Issuer"],
+            ValidAudience = cfg["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(cfg["Jwt:Key"]!))
+        };
+    });
+
+// DB SQL Server
+services.AddDbContext<OrdersDbContext>(o =>
+    o.UseSqlServer(cfg.GetConnectionString("SqlServer")));
+
+// MongoDB
+services.AddSingleton<IMongoClient>(_ => new MongoClient(cfg.GetConnectionString("Mongo")));
+
+// Redis
+services.AddStackExchangeRedisCache(o =>
+{
+    o.Configuration = cfg.GetConnectionString("Redis");
+});
+
+// Azure Service Bus
+services.AddSingleton<ServiceBusClient>(_ => new ServiceBusClient(cfg.GetConnectionString("ServiceBus")));
+
+// Repositórios e Serviços
+services.AddScoped<IPedidoSqlRepository, PedidoSqlRepository>();
+services.AddScoped<IPedidoItensMongoRepository, PedidoItensMongoRepository>();
+services.AddScoped<IPedidoCache, PedidoCache>();
+services.AddScoped<IEventPublisher, EventPublisher>();
+
+// MediatR + FluentValidation
+services.AddMediatR(cfgM => cfgM.RegisterServicesFromAssembly(typeof(CreatePedidoHandler).Assembly));
+services.AddValidatorsFromAssembly(typeof(CreatePedidoRequestValidator).Assembly);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Middleware pipeline
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
 
 //services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CreatePedidoHandler).Assembly));
 
