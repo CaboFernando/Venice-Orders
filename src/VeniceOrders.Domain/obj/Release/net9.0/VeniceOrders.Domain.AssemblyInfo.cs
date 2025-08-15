@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VeniceOrders.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb0b592353d5b2a97ef1caf05855b1c5f248e521")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc7fa949c0b83d70616f3c7a88ec2b81ecf3f964")]
 [assembly: System.Reflection.AssemblyProductAttribute("VeniceOrders.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VeniceOrders.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
