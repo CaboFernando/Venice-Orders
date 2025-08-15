@@ -20,6 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\VeniceOrders.Application\VeniceOrders.Application.csproj" />
+    <ProjectReference Include="..\..\src\VeniceOrders.Domain\VeniceOrders.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
 

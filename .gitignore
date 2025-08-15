@@ -3,3 +3,4 @@
 ################################################################################
 
 /.vs/VeniceOrders
+/tests/VeniceOrders.Tests/bin/Debug/net9.0
