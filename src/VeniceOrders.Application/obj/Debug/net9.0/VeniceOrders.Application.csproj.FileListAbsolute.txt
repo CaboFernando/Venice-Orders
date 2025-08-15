@@ -1,0 +1,16 @@
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\bin\Debug\net9.0\VeniceOrders.Application.deps.json
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\bin\Debug\net9.0\VeniceOrders.Application.dll
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\bin\Debug\net9.0\VeniceOrders.Application.pdb
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\bin\Debug\net9.0\VeniceOrders.Domain.dll
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\bin\Debug\net9.0\VeniceOrders.Domain.pdb
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\obj\Debug\net9.0\VeniceOrders.Application.csproj.AssemblyReference.cache
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\obj\Debug\net9.0\VeniceOrders.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\obj\Debug\net9.0\VeniceOrders.Application.AssemblyInfoInputs.cache
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\obj\Debug\net9.0\VeniceOrders.Application.AssemblyInfo.cs
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\obj\Debug\net9.0\VeniceOrders.Application.csproj.CoreCompileInputs.cache
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\obj\Debug\net9.0\VeniceOrders.Application.sourcelink.json
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\obj\Debug\net9.0\VeniceOr.01C40EA0.Up2Date
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\obj\Debug\net9.0\VeniceOrders.Application.dll
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\obj\Debug\net9.0\refint\VeniceOrders.Application.dll
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\obj\Debug\net9.0\VeniceOrders.Application.pdb
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Application\obj\Debug\net9.0\ref\VeniceOrders.Application.dll

@@ -1,0 +1,12 @@
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Domain\bin\Debug\net9.0\VeniceOrders.Domain.deps.json
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Domain\bin\Debug\net9.0\VeniceOrders.Domain.dll
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Domain\bin\Debug\net9.0\VeniceOrders.Domain.pdb
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Domain\obj\Debug\net9.0\VeniceOrders.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Domain\obj\Debug\net9.0\VeniceOrders.Domain.AssemblyInfoInputs.cache
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Domain\obj\Debug\net9.0\VeniceOrders.Domain.AssemblyInfo.cs
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Domain\obj\Debug\net9.0\VeniceOrders.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Domain\obj\Debug\net9.0\VeniceOrders.Domain.sourcelink.json
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Domain\obj\Debug\net9.0\VeniceOrders.Domain.dll
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Domain\obj\Debug\net9.0\refint\VeniceOrders.Domain.dll
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Domain\obj\Debug\net9.0\VeniceOrders.Domain.pdb
+C:\Users\Usuário\Documents\GitHub\Venice-Orders\src\VeniceOrders.Domain\obj\Debug\net9.0\ref\VeniceOrders.Domain.dll
