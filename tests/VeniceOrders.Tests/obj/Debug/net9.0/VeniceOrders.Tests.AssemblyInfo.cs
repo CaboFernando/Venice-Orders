@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VeniceOrders.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb0b592353d5b2a97ef1caf05855b1c5f248e521")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2df5dc773faf15426194b448992c5ff5315f4cd1")]
 [assembly: System.Reflection.AssemblyProductAttribute("VeniceOrders.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VeniceOrders.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
