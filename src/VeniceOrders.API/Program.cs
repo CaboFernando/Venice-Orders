@@ -41,3 +41,9 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 }
 
 //services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CreatePedidoHandler).Assembly));
+
+// Program.cs (na VeniceOrders.API)
+//services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(VeniceOrders.Application.Commands.CreatePedido.CreatePedidoHandler).Assembly));
+
+// Validations
+//services.AddValidatorsFromAssembly(typeof(VeniceOrders.Application.Validation.CreatePedidoRequestValidator).Assembly);
