@@ -100,6 +100,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.MapGet("/", () => Results.Redirect("/swagger"));
 }
 
 app.UseAuthentication();
@@ -107,12 +108,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-
-//services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CreatePedidoHandler).Assembly));
-
-// Program.cs (na VeniceOrders.API)
-//services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(VeniceOrders.Application.Commands.CreatePedido.CreatePedidoHandler).Assembly));
-
-// Validations
-//services.AddValidatorsFromAssembly(typeof(VeniceOrders.Application.Validation.CreatePedidoRequestValidator).Assembly);

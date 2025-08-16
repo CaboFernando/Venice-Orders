@@ -11,7 +11,7 @@ services:
       ConnectionStrings__SqlServer: Server=sqlserver,1433;Database=VeniceOrders;User Id=sa;Password=sql123##;
       ConnectionStrings__Mongo: mongodb://mongo:27017
       ConnectionStrings__Redis: redis:6379
-      ConnectionStrings__ServiceBus: Endpoint=Endpoint=sb://sb-veniceorders.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=G+24Ub4m3eHAvoabMvtTp1GbVxHrjul/E+ASbMECbLs=
+      ConnectionStrings__ServiceBus: Endpoint=sb://sb-veniceorders.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=G+24Ub4m3eHAvoabMvtTp1GbVxHrjul/E+ASbMECbLs=
       Mongo__Database: venice_orders
       ServiceBus__QueueName: pedido-criado
       Jwt__Key: Fm8G+Xq2Y5k3Lw4oPz9nJ7y6aEa5Hw0oZ0I4bC3T+uR=
